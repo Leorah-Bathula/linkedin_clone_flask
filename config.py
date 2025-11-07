@@ -1,6 +1,12 @@
 import os
 
-class Config:
-    SECRET_KEY = os.environ.get("SECRET_KEY", "mysecretkey123")
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:Jessi03*@localhost/linkedin_clone"
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
+# Get the absolute path of the current directory
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+
+# Use SQLite (local file-based DB)
+SQLALCHEMY_DATABASE_URI = f"sqlite:///{os.path.join(BASE_DIR, 'database.db')}"
+
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+# Secret key for sessions (pulled from Render env or default)
+SECRET_KEY = os.environ.get("SECRET_KEY", "mysecretkey123")

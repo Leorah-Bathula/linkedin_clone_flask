@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ user.name }}'s Profile</h2>
+{% for post in posts %}
+<div class="post-card">
+    <p>{{ post.content }}</p>
+    {% if post.image %}
+    <img src="{{ url_for('static', filename='uploads/' ~ post.image) }}" width="200">
+    {% endif %}
+</div>
+{% else %}
+<p>No posts yet.</p>
+{% endfor %}
+{% endblock %}

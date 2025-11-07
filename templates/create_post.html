@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Create a Post</h2>
+<form method="POST" enctype="multipart/form-data">
+    <textarea name="content" rows="4" cols="50" placeholder="What's on your mind?" required></textarea><br>
+    <label>Upload Image:</label>
+    <input type="file" name="image" accept="image/*"><br><br>
+    <button type="submit">Post</button>
+</form>
+{% endblock %}

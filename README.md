@@ -94,8 +94,8 @@ To save time, use these demo accounts to test quickly:
 
 | Name               | Email                                     | Password |
 | ------------------ | ----------------------------------------- | -------- |
-| **Chris**          | [chris@gmail.com](mailto:chris@gmail.com) | chris!@  |
-| **Priya**          | [priya@gmail.com](mailto:priya@gmail.com) | 12345    |
+| **Demo**           | [demo1@gmail.com](mailto:demo1@gmail.com) | 1234     |
+| **Mike**           | [mike@gmail.com](mailto:mike@gmail.com)   | mike123  |
 
 
 Or, register a new account using the **Sign Up** page.

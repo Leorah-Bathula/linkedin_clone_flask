@@ -6,7 +6,7 @@ from flask_login import LoginManager, login_user, login_required, logout_user, c
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 
-from config import Config
+import config 
 from models import db, User, Post, Like
 
 UPLOAD_FOLDER = 'static/uploads'
@@ -14,7 +14,11 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__)
-app.config.from_object(Config)
+
+# Manually assign config values instead of from_object(Config)
+app.config['SQLALCHEMY_DATABASE_URI'] = config.SQLALCHEMY_DATABASE_URI
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = config.SQLALCHEMY_TRACK_MODIFICATIONS
+app.config['SECRET_KEY'] = config.SECRET_KEY
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 db.init_app(app)
